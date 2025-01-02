@@ -1,8 +1,8 @@
 /*
 * MenuCanvas.cpp
 *
-*  Created on: May 6, 2020
-*      Author: noyan
+*  Created on: May 6, 2024
+*      Author: elif
 */
 
 
@@ -217,7 +217,7 @@ void MenuCanvas::screenBright() {
 void MenuCanvas::karakterSceneUpdate() {
 	if(modelchange == 1){
 		//Animasyon calisiyor
-		//Karakter yakýnlasiyor
+		//Karakter yakÃ½nlasiyor
 		if(karakter2z < -0.5){
 			karakter2z += 0.03;
 		}
