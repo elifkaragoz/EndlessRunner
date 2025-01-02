@@ -1,8 +1,8 @@
 /*
 * gCanvas.cpp
 *
-*  Created on: May 6, 2020
-*      Author: noyan
+*  Created on: May 6, 2024
+*      Author: elif
 */
 
 
@@ -146,7 +146,7 @@ void gCanvas::keyPressed(int key) {
 		kaydedilecekdeger.push_back(coinscore);
 		kaydedilecekbaslik.push_back("Score2");
 		kaydedilecekdeger.push_back(coinscore + 1000);
-		//score deðeri kayýda gönderiliyor
+		//score deÃ°eri kayÃ½da gÃ¶nderiliyor
 		saveGame(kaydedilecekbaslik, kaydedilecekdeger);
 		kaydedilecekbaslik.clear();
 		kaydedilecekdeger.clear();
@@ -223,7 +223,7 @@ void gCanvas::cameraSetup() {
 	cameraup = false;
 	cameradown = false;
 
-	//Camera Rotateler (Cameranýn Kendisi)
+	//Camera Rotateler (CameranÃ½n Kendisi)
 	cameraturnleft = false;
 	cameraturnright = false;
 	cameraturnup = false;
@@ -239,8 +239,8 @@ void gCanvas::cameraHareketi() {
 	if(cameraforward)camera.dolly(-2.2f); //z ekseni ileri
 	if(camerabackward)camera.dolly(2.2f); //z ekseni geri
 	if(cameraleft)camera.truck(-0.2f); //x ekseni sol
-	if(cameraright)camera.truck(0.2f); //x ekseni sað
-	if(cameradown)camera.boom(-0.2f); //y ekseni yukarý
+	if(cameraright)camera.truck(0.2f); //x ekseni saÃ°
+	if(cameradown)camera.boom(-0.2f); //y ekseni yukarÃ½
 	if(cameraup)camera.boom(0.2f); //y ekseni asagi
 	if(cameraturnright)camera.pan(-0.05f); //y ekseni sola don
 	if(cameraturnleft)camera.pan(0.05f); //y ekseni sola sag
@@ -405,7 +405,7 @@ void gCanvas::karakterUpdate() {
 	if(karakterhiz < 0.4f)karakterhiz += karakterivme;
 	if(karakterhiz > 0.4f)karakterhiz -= karakterivme * 12;
 
-	//Zýplama hareketi
+	//ZÃ½plama hareketi
 	//Karakteri Y ekseninde ilerlet
 	karakter.boom(karakterhizy);
 	if(karakter.getPosY() > 1.8f){
@@ -646,7 +646,7 @@ void gCanvas::karakterVsEngel() {
 		if(engellistesi[sira][ENGEL_MAPID] != karakterhangiyol)continue;
 		engelhitbox.setPosition(engellistesi[sira][ENGEL_X],engellistesi[sira][ENGEL_Y] + engelh / 2,engellistesi[sira][ENGEL_Z]);
 		if(karakterhitbox.getBoundingBox().intersects(engelhitbox.getBoundingBox())){
-			//karakter olecek yada caný azalacak
+			//karakter olecek yada canÃ½ azalacak
 			karakterdurum = ROBOT_OLDU;
 			oyunmodu = OYUN_BITTI;
 			//karakter yavaslayacak
@@ -708,7 +708,7 @@ void gCanvas::scoreKaydiSetup() {
 	scorekaydi.loadFile("highscore.txt", gFile::FILEMODE_READONLY);
 	data = scorekaydi.getText(); //Dosyadaki butun veri kaydedildi
 	std::vector<std::string> datalistesi; //Bolunecek kisimlarin yerlestirilecegi vector
-	datalistesi = gSplitString(data, ";"); //Belirtilen ozel karakter (;) kullanýlarak metni parcalýyor ve vectore atýyor
+	datalistesi = gSplitString(data, ";"); //Belirtilen ozel karakter (;) kullanÃ½larak metni parcalÃ½yor ve vectore atÃ½yor
 	int score = 0;
 	for (int var = 0; var < datalistesi.size(); ++var) {
 		if((var % 2) == 1)score = gToInt(datalistesi[var]);
@@ -830,7 +830,7 @@ void gCanvas::loadGame() {
 	if(!savefile.exists()){
 		savefilecrashed = true;
 	}else{
-		//Butun dosya bir metin degiskenine aktarýlýyor
+		//Butun dosya bir metin degiskenine aktarÃ½lÃ½yor
 		savefiletext = savefile.getText();
 		//Veri bos mu degil mi onu kontrol edecek
 		if(savefiletext.empty()){
