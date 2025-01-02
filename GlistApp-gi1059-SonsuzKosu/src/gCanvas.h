@@ -1,8 +1,8 @@
  /*
  * gCanvas.h
  *
- *  Created on: May 6, 2020
- *      Author: noyan
+ *  Created on: May 6, 2024
+ *      Author: elif
  */
 
 #ifndef GCANVAS_H_
